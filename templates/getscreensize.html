@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screen Size Example</title>
+</head>
+<body>
+    <h1>Screen Size</h1>
+    <p id="screen-size">Loading...</p>
+
+    <script>
+        // Send screen size to Flask
+        fetch('/screen-size', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                width: window.innerWidth,
+                height: window.innerHeight
+            })
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+        // Update screen size display
+        document.getElementById('screen-size').textContent = `Screen Width: ${window.innerWidth}px, Height: ${window.innerHeight}px`;
+    </script>
+</body>
+</html>

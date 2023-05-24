@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .send-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/validation" method="POST">
+            <h2>Enter Password</h2>
+            <input type="password" name="password-input" class="input-field">
+            <br>
+            <button class="send-button" onclick="sendPassword()">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function sendPassword() {
+            var password = document.getElementById('password-input').value;
+            // You can add your logic here to handle the password input
+            // For example, you can send it to a server for validation or perform client-side operations.
+            console.log('Password:', password);
+        }
+    </script>
+</body>
+</html>
